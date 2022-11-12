@@ -1,18 +1,19 @@
-import icons from '../../../assets/icons';
+import { ShoppingCart } from '../../../assets/icons/Cart';
 
 export const ButtonVariant = () => (
   <button
     className="
-        w-18
         flex
+        h-9
+        w-9
         items-center
         rounded
-        bg-purple-900
+        bg-purple-dark
         p-2
         transition
-        hover:bg-purple-700
+        hover:bg-purple-medium
       "
   >
-    <img src={icons.cart} alt="" />
+    <ShoppingCart className="fill-white" />
   </button>
 );

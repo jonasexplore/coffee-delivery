@@ -1,25 +1,40 @@
-import icons from '../../../assets/icons';
+import { ShoppingCart } from '../../../assets/icons/Cart';
 
 type Props = {
   quantity: number;
 };
 
 export const HeaderVariant = ({ quantity = 0 }: Props) => (
-  <div>
-    {quantity && <div>{quantity}</div>}
+  <div className="relative">
     <button
       className="
-        w-18
         flex
+        h-9
+        w-9
+        flex-col
         items-center
         rounded
-        bg-orange-200
-        p-2
+        bg-yellow-light
+        px-2
+        py-2
         transition
-        hover:bg-orange-300
       "
     >
-      <img className="fill-orange-500" src={icons.cart} alt="" />
+      <div
+        className="
+            absolute
+            ml-6
+            -mt-4
+            rounded-full
+            bg-yellow-dark
+            px-1
+            text-xs
+            text-white
+          "
+      >
+        {quantity && <div>{quantity}</div>}
+      </div>
+      <ShoppingCart className="fill-yellow-dark" />
     </button>
   </div>
 );
