@@ -22,12 +22,11 @@ export const Counter = ({ min = 1, max = 10 }: Props) => {
     <div
       className="
         flex 
-        w-16 
+        w-18 
         items-center 
         justify-between 
         rounded-md 
         bg-gray-200
-        font-bold
         text-purple-900
       "
     >
@@ -39,7 +38,7 @@ export const Counter = ({ min = 1, max = 10 }: Props) => {
       >
         -
       </button>
-      <span>{count}</span>
+      <span className="text-base">{count}</span>
       <button
         onClick={() => onHandleCount(1)}
         className="

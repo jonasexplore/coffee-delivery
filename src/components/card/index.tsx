@@ -11,7 +11,7 @@ const Card = ({ coffee }: Props) => {
   return (
     <div
       className="
-        m-6
+        mt-8
         w-64
         rounded-tr-3xl
         rounded-bl-3xl
@@ -22,7 +22,7 @@ const Card = ({ coffee }: Props) => {
       "
     >
       <div className="flex flex-col items-center pb-6">
-        <div className="-mt-5">
+        <div className="-mt-8">
           <img src={coffee.img} />
         </div>
         <TagList tags={coffee.tags} />
@@ -34,6 +34,7 @@ const Card = ({ coffee }: Props) => {
             <span
               className="
                 flex-1
+                font-baloo
                 text-2xl
                 font-extrabold
                 text-gray-700
@@ -42,8 +43,10 @@ const Card = ({ coffee }: Props) => {
               {coffee.price}
             </span>
           </div>
-          <Counter />
-          <Button.Cart />
+          <div className="flex gap-2">
+            <Counter />
+            <Button.Cart />
+          </div>
         </div>
       </div>
     </div>

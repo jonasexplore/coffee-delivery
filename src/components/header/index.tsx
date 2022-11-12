@@ -3,7 +3,7 @@ import { Button } from '../buttons';
 
 export const Header = () => {
   return (
-    <div className="m-8 flex h-9 justify-between">
+    <div className="flex h-9 justify-between">
       <div className="flex-1">
         <img src={icons.logo} />
       </div>
@@ -22,9 +22,9 @@ export const Header = () => {
           <div>
             <img className="text-sm" src={icons.spot} />
           </div>
-          <p>Porto Alegre, RS</p>
+          <p className="text-purple-800">Porto Alegre, RS</p>
         </div>
-        <Button.Cart variant="header" />
+        <Button.Cart variant="header" quantity={10} />
       </div>
     </div>
   );
