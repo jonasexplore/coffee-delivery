@@ -1,6 +1,11 @@
 import { ShoppingCart } from '../../../assets/icons/Cart';
 
-export const ButtonVariant = () => (
+type ButtonProps = {} & React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
+
+export const ButtonVariant = (props: ButtonProps) => (
   <button
     className="
         flex
@@ -13,6 +18,7 @@ export const ButtonVariant = () => (
         transition
         hover:bg-purple-medium
       "
+    {...props}
   >
     <ShoppingCart className="fill-white" />
   </button>

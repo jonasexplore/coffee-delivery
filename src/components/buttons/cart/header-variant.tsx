@@ -2,12 +2,16 @@ import { ShoppingCart } from '../../../assets/icons/Cart';
 
 type Props = {
   quantity: number;
-};
+} & React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
 
-export const HeaderVariant = ({ quantity = 0 }: Props) => (
-  <div className="relative">
-    <button
-      className="
+export const HeaderVariant = ({ quantity = 0, ...props }: Props) => {
+  return (
+    <div className="relative">
+      <button
+        className="
         flex
         h-9
         w-9
@@ -19,9 +23,10 @@ export const HeaderVariant = ({ quantity = 0 }: Props) => (
         py-2
         transition
       "
-    >
-      <div
-        className="
+        {...props}
+      >
+        <div
+          className="
             absolute
             ml-6
             -mt-4
@@ -31,10 +36,11 @@ export const HeaderVariant = ({ quantity = 0 }: Props) => (
             text-xs
             text-white
           "
-      >
-        {quantity && <div>{quantity}</div>}
-      </div>
-      <ShoppingCart className="fill-yellow-dark" />
-    </button>
-  </div>
-);
+        >
+          {Boolean(quantity) && <div>{quantity}</div>}
+        </div>
+        <ShoppingCart className="fill-yellow-dark" />
+      </button>
+    </div>
+  );
+};
