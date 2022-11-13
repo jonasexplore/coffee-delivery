@@ -1,21 +1,24 @@
-import { useState } from 'react';
-
 type Props = {
+  quantity: number;
+  setQuantity: (quantity: number) => void;
   min?: number;
   max?: number;
 };
 
-export const Counter = ({ min = 1, max = 10 }: Props) => {
-  const [count, setCount] = useState(1);
-
+export const Counter = ({
+  quantity,
+  setQuantity,
+  min = 1,
+  max = 10,
+}: Props) => {
   function onHandleCount(value: number) {
-    const newCount = count + value;
+    const newCount = quantity + value;
 
     if (newCount < min || newCount > max) {
       return;
     }
 
-    setCount(count + value);
+    setQuantity(quantity + value);
   }
 
   return (
@@ -38,7 +41,7 @@ export const Counter = ({ min = 1, max = 10 }: Props) => {
       >
         -
       </button>
-      <span className="text-base">{count}</span>
+      <span className="text-base">{quantity}</span>
       <button
         onClick={() => onHandleCount(1)}
         className="

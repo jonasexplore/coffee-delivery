@@ -1,13 +1,20 @@
 import { Coffee } from '../../types';
-import { Button } from '../buttons';
+import { Buttons } from '../buttons';
 import { Counter } from '../counter';
 import { TagList } from '../tag';
+import { useDispatch } from 'react-redux';
+import * as checkoutSlice from '../../features/checkout/checkout-slice';
+import { useState } from 'react';
 
 type Props = {
   coffee: Coffee;
 };
 
 const Card = ({ coffee }: Props) => {
+  const dispatch = useDispatch();
+
+  const [quantity, setQuantity] = useState(1);
+
   return (
     <div
       className="
@@ -44,8 +51,19 @@ const Card = ({ coffee }: Props) => {
             </span>
           </div>
           <div className="flex gap-2">
-            <Counter />
-            <Button.Cart />
+            <Counter quantity={quantity} setQuantity={setQuantity} />
+            <Buttons.Cart
+              variant="button"
+              onClick={() =>
+                dispatch(
+                  checkoutSlice.add({
+                    quantity,
+                    id: coffee.id,
+                    price: coffee.price,
+                  }),
+                )
+              }
+            />
           </div>
         </div>
       </div>
