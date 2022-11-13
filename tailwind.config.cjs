@@ -23,6 +23,9 @@ module.exports = {
         baloo: ["'Baloo 2'"],
         sans: ['Roboto', 'sans-serif'],
       },
+      gridTemplateColumns: {
+        '6-4': '6fr 4fr',
+      },
     },
   },
   plugins: [],
