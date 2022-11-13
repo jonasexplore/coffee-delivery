@@ -30,7 +30,7 @@ export const Banner = () => {
             h-full
             w-full
             bg-home
-            blur-3xl
+            blur-xl
           "
       ></div>
       <div className="grid grid-cols-2">
@@ -43,8 +43,8 @@ export const Banner = () => {
             hora
           </p>
           <div className="grid grid-cols-2 gap-x-10 gap-y-5">
-            {advantages.map(({ img, label }) => (
-              <Icon img={img} label={label} />
+            {advantages.map(({ img, label }, index) => (
+              <Icon img={img} label={label} key={index} />
             ))}
           </div>
         </div>

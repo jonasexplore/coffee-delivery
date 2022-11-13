@@ -3,8 +3,9 @@ type Props = {
 };
 
 export const TagList = ({ tags = [] }: Props) => {
-  const TagItem = tags.map((tag) => (
+  const TagItem = tags.map((tag, index) => (
     <div
+      key={index}
       className="
         my-3
         rounded-xl
