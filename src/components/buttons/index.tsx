@@ -1,1 +1,1 @@
-export * as Button from './cart';
+export * as Buttons from './cart';
