@@ -1,6 +1,6 @@
-import { ShoppingCart } from '../../../assets/icons/Cart';
+import { ShoppingCart } from '@/assets/icons/Cart';
 
-type ButtonProps = {} & React.DetailedHTMLProps<
+type ButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >;

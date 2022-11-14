@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-type Props = {} & SVGProps<SVGSVGElement>;
+type Props = SVGProps<SVGSVGElement>;
 
 export const ShoppingCart = (props: Props) => (
   <svg width="22" height="22" viewBox="0 0 22 22" {...props}>

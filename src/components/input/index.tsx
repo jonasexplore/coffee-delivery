@@ -1,4 +1,4 @@
-type Props = {} & React.InputHTMLAttributes<HTMLInputElement>;
+type Props = React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = ({ className = '', ...props }: Props) => {
   return (
