@@ -1,23 +1,6 @@
-import { Icon } from '../icon';
+import { advantages } from './data';
 
-const advantages = [
-  {
-    label: 'Compra simples e segura',
-    img: './icons/cart.png',
-  },
-  {
-    label: 'Embalagem mantém o café intacto',
-    img: './icons/package.png',
-  },
-  {
-    label: 'Entrega rápida e rastreada',
-    img: './icons/clock.png',
-  },
-  {
-    label: 'O café chega fresquinho até você',
-    img: './icons/coffee.png',
-  },
-];
+import { Icon } from '../icon';
 
 export const Banner = () => {
   return (
@@ -33,7 +16,7 @@ export const Banner = () => {
             blur-xl
           "
       ></div>
-      <div className="grid grid-cols-2">
+      <div className="grid sx:grid-cols-1 sm:grid-cols-2">
         <div className="col-auto">
           <h1 className="mb-4 font-baloo text-5xl font-extrabold">
             Encontre o café perfeito para qualquer hora do dia
@@ -48,7 +31,7 @@ export const Banner = () => {
             ))}
           </div>
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end sx:hidden sm:flex">
           <img src="./coffee-delivery.png" alt="" />
         </div>
       </div>
