@@ -31,6 +31,27 @@ type RemoveCoffee = {
   id: string;
 };
 
+type CheckoutInitialProps = {
+  cep: string;
+  address: string;
+  number: string;
+  complement: string;
+  district: string;
+  city: string;
+  state: string;
+  paymentType: string;
+};
+
+type Order = {
+  id: string;
+} & CheckoutInitialProps;
+
+type OrderState = {
+  orders: Order[];
+};
+
+type AddOrder = Order;
+
 export type {
   Coffee,
   CheckoutState,
@@ -38,4 +59,7 @@ export type {
   CoffeeItem,
   AddCoffee,
   RemoveCoffee,
+  CheckoutInitialProps,
+  OrderState,
+  AddOrder,
 };
