@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { CheckoutState } from '../../types';
+
+import { CheckoutState } from '@/types';
+
 import * as actions from './actions';
 
 const initialState: CheckoutState = {
@@ -12,9 +14,10 @@ const checkoutSlice = createSlice({
   reducers: {
     add: actions.addCoffeeAction,
     remove: actions.removeCoffeeAction,
+    reset: actions.resetCoffeeAction,
   },
 });
 
-export const { add, remove } = checkoutSlice.actions;
+export const { add, remove, reset } = checkoutSlice.actions;
 
 export default checkoutSlice.reducer;

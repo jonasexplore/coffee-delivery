@@ -1,10 +1,12 @@
-import { Coffee } from '../../types';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import * as checkoutSlice from '@/features/checkout/checkout-slice';
+import { Coffee } from '@/types';
+
 import { Buttons } from '../buttons';
 import { Counter } from '../counter';
-import { TagList } from '../tag';
-import { useDispatch } from 'react-redux';
-import * as checkoutSlice from '../../features/checkout/checkout-slice';
-import { useState } from 'react';
+import { TagList } from '../lists/tag';
 
 type Props = {
   coffee: Coffee;
@@ -14,6 +16,18 @@ const Card = ({ coffee }: Props) => {
   const dispatch = useDispatch();
 
   const [quantity, setQuantity] = useState(1);
+
+  const onClickButton = () => {
+    setQuantity(1);
+
+    dispatch(
+      checkoutSlice.add({
+        quantity,
+        id: coffee.id,
+        price: coffee.price,
+      }),
+    );
+  };
 
   return (
     <div
@@ -30,7 +44,7 @@ const Card = ({ coffee }: Props) => {
     >
       <div className="flex flex-col items-center pb-6">
         <div className="-mt-8">
-          <img src={coffee.img} />
+          <img src={coffee.img} alt="" />
         </div>
         <TagList tags={coffee.tags} />
         <h2 className="text-xl font-bold">{coffee.title}</h2>
@@ -52,18 +66,7 @@ const Card = ({ coffee }: Props) => {
           </div>
           <div className="flex gap-2">
             <Counter quantity={quantity} setQuantity={setQuantity} />
-            <Buttons.Cart
-              variant="button"
-              onClick={() =>
-                dispatch(
-                  checkoutSlice.add({
-                    quantity,
-                    id: coffee.id,
-                    price: coffee.price,
-                  }),
-                )
-              }
-            />
+            <Buttons.Cart variant="button" onClick={onClickButton} />
           </div>
         </div>
       </div>

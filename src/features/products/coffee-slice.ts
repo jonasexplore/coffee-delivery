@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Coffee, CoffeeState } from '../../types';
+
+import { Coffee, CoffeeState } from '@/types';
 
 const coffees: Coffee[] = [
   {

@@ -1,8 +1,10 @@
-import icons from '../../assets/icons';
-import { Buttons } from '../buttons';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+
+import icons from '@/assets/icons';
+import { RootState } from '@/store';
+
+import { Buttons } from '../buttons';
 
 export const Header = () => {
   const { items } = useSelector((state: RootState) => state.checkout);
@@ -12,9 +14,9 @@ export const Header = () => {
 
   return (
     <div className="flex h-9 justify-between">
-      <div className="flex-1 cursor-pointer">
-        <img src={icons.logo} onClick={() => navigate('/')} />
-      </div>
+      <NavLink className="flex-1 cursor-pointer" to="/">
+        <img src={icons.logo} alt="logo" />
+      </NavLink>
       <div className="flex gap-3">
         <div
           className="
@@ -28,7 +30,7 @@ export const Header = () => {
             "
         >
           <div>
-            <img className="text-sm" src={icons.spot} />
+            <img className="text-sm" src={icons.spot} alt="spot icon" />
           </div>
           <p className="text-purple-800">Porto Alegre, RS</p>
         </div>

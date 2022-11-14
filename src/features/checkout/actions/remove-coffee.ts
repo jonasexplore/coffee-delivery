@@ -1,5 +1,6 @@
 import { CaseReducer, PayloadAction } from '@reduxjs/toolkit';
-import { RemoveCoffee, CheckoutState } from '../../../types';
+
+import { CheckoutState, RemoveCoffee } from '@/types';
 
 const removeCoffeeAction: CaseReducer<
   CheckoutState,

@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
-import { Banner } from '../components/banner';
-import { Card } from '../components/card';
-import { HeaderLayout } from '../layouts/header';
-import { RootState } from '../store';
+
+import { Banner } from '@/components/banner';
+import { Card } from '@/components/card';
+import { HeaderLayout } from '@/layouts/header';
+import { RootState } from '@/store';
 
 export const HomePage = () => {
   const { items } = useSelector((state: RootState) => state.coffee);

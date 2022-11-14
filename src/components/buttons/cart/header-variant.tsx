@@ -1,4 +1,4 @@
-import { ShoppingCart } from '../../../assets/icons/Cart';
+import { ShoppingCart } from '@/assets/icons/Cart';
 
 type Props = {
   quantity: number;

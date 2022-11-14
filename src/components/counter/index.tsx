@@ -33,21 +33,11 @@ export const Counter = ({
         text-purple-900
       "
     >
-      <button
-        onClick={() => onHandleCount(-1)}
-        className="
-          px-2
-        "
-      >
+      <button onClick={() => onHandleCount(-1)} className=" px-2">
         -
       </button>
       <span className="text-base">{quantity}</span>
-      <button
-        onClick={() => onHandleCount(1)}
-        className="
-          px-2
-        "
-      >
+      <button onClick={() => onHandleCount(1)} className="px-2">
         +
       </button>
     </div>
